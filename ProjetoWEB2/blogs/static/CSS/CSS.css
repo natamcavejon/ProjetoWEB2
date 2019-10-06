@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(185, 219, 247);
+    
+}
+.imgp{
+    max-width:70%;
+}
+.imgh{
+
+    display: block;
+    
+}
+.app-header{
+    background-color:hsl(219, 79%, 54%);
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 250%;
+    text-align: center;https://youtu.be/EChjIHaBjf8
+}
+.titleh1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif
+}
+#id_nome{
+    display: block; width: 350px; height: 45px; border-radius: 2%;
+}
+#id_comentario{
+    display: block; width: 350px; height: 200px; border-radius: 2%;
+}
+button.btn.btn-primary {
+    /* margin: 8%; */
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin-left: 40%;
+    margin-top: -5%;
+}
+.boxs{
+
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+}
+.texts{
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+}

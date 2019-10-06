@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en"> 
+{% load static %} 
+
+<link rel="stylesheet" href="static/CSS/CSS.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+
+    <title>BlogCar</title>
+</head>
+<body>
+    <header class='app-header'>
+        <h2 class='logo'>BlogCAR</h2>
+    </header><br><br>
+    <h1 class='titleh1 texts' >NOTICIAS QUENTES</h1>
+    <h3 class='titleh1 texts'>DO MUNDO AUTOMOTIVO!</h3><br><br>
+    <ul>
+        {% for blog in blogs %}
+                <div class="container boxs">
+                    <h2 class="card-title">{{blog.title}}</h2>
+                    <div class="card" style="width: 50rem;">
+                        <img class='imgh'src="{{blog.img}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">{{blog.intro}}</p>
+                            <a href="{% url 'noticias' blog.id %}" class="btn btn-primary">Leia mais...</a>
+                        </div>
+                    </div>
+                 </div><br>
+        {% endfor%}
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en"> 
+{% load static %}
+
+<link rel="stylesheet" href="/static/CSS/CSS.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BlogCar</title>
+</head>
+<body>
+        <header class='app-header'>
+                <h2 class='logo'>BlogCAR</h2>
+        </header><br><br>
+    <ul>
+            <div class='container'>
+                <h1>{{noticia.title}}</h1><br>
+                <h2>{{noticia.intro}}</h2><br>
+                <img class='imgh'src="{{noticia.img}}" alt=""><br>
+                <h6>{{noticia.noticia|linebreaks}}</h6>
+                <img class='imgh'src="{{noticia.img2}}" alt=""><br>
+            </div>
+            <div>
+            </div>
+    </ul>
+    
+    <ul>
+        <h2 class="card-title" style="margin-left: 6%"> Comentarios</h2><br>
+        
+        {% for comentario in comentarios%}
+            <div class="container " style="width: 25rem align-iten=lef;" >
+
+                    <h4 class="card-title">{{comentario.nome}}</h4>
+  
+                        <div class="card-body card" style="width: 25rem">
+                            <p class="card-text">{{comentario.comentario}}</p>   
+                        </div>
+                 </div><br>
+        {% endfor %}
+        <br><br>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="container " style=" rem align-iten=lef;" >
+                <h3 class="card-title">Novo comentario</h2>
+                <div class=" row- 5">
+                <div class="card-body card" style="width: 25rem">
+                   {{form}}  
+                </div>
+            </div>
+            </div>
+           <div class="row-31545452">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+           </div> <br>  
+           <div>
+                <a href="{% url 'home'%}" class="btn btn-primary">Voltar</a>
+            </div>   
+        </form>
+        
+    </ul>
+ 
+</body>
+</html>
